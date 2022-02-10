@@ -1,0 +1,83 @@
+package kasir;
+import java.util.Scanner;
+import javax.xml.transform.OutputKeys;
+
+public class Kasir {
+    double harga, total, bayar, kembalian;
+    int pil, jumlah;
+
+        double hitungTotal(int jml){
+        jumlah = jml;
+            switch (pil) {
+                case 0:
+                    System.exit(jml);
+                    break;
+                case 1:
+                    harga = 1500;
+                    total = total+(harga*jml);
+                    break;
+                case 2:
+                    harga = 1000;
+                    total = total+(harga*jml);
+                    break;
+                case 3:
+                    harga = 2500;
+                    total = total+(harga*jml);
+                    break;
+                case 9:
+                    
+                    break;
+                default:
+                    System.out.println("ERROR : Input yang dimasukkan salah !");
+            }
+                return total;
+        }
+
+
+   void viewTotal (){
+        System.out.println("======== Pembayaran =======");
+        System.out.println("Total : Rp." + total);
+
+        }
+
+            double hitungKembalian (double byr){
+            bayar = byr;
+            kembalian = byr-total;
+            return kembalian;
+            }
+    void viewKembalian(){
+            System.out.println("Kembalian: Rp." + kembalian);
+            System.out.println("======== TERIMA KASIH =======");
+    }
+   public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Kasir in = new Kasir();
+        System.out.println("==========================");
+        System.out.println("Toko Mbah Mijon");
+        do {            
+            System.out.println("============================");
+            System.out.println("Pilihan :");
+            System.out.println("[1] Pulpen (Rp.1500)");
+            System.out.println("[2] Penggaris (Rp. 1000)");
+            System.out.println("[3] Buku (Rp, 2500)");
+            System.out.println("\n [9] Selesai dan hitung belanja");
+            System.out.println("[0] Keluar");
+            System.out.println("============================");
+            System.out.println("Masukkan Pilihan : ");
+            in.pil = input.nextInt();
+            if (in.pil >= 1 && in.pil <=3) {
+                System.out.println("Masukkan Jumlah Beli : ");
+            in.jumlah = input.nextInt();
+            } else {
+}
+            in.hitungTotal(in.jumlah);
+        } while (in.pil!=9);
+        in.viewTotal();
+        System.out.println("Bayar : Rp.");
+        in.bayar = input.nextDouble();
+        in.hitungKembalian(in.bayar);
+        in.viewKembalian();
+
+}
+    
+}
