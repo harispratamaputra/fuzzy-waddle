@@ -1,3 +1,5 @@
+//
+
 package kasir;
 import java.util.Scanner;
 import javax.xml.transform.OutputKeys;
